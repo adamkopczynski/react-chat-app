@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import {Provider} from 'react-redux';
-import { combineReducers } from 'redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import {Provider} from 'react-redux'
+import { combineReducers, createStore } from 'redux'
 
-import registerServiceWorker from './registerServiceWorker';
-import messages from './reducers/messages';
-import users from './reducers/users';
+import registerServiceWorker from './registerServiceWorker'
+import messages from './reducers/messages'
+import users from './reducers/users'
+import {addUser} from './actions/chatActions'
 
-const store  = combineReducers({
+const chat = combineReducers({
   messages,
   users
-});
+})
+
+const store = createStore(chat)
+
+store.dispatch(addUser('Me'))
 
 ReactDOM.render(
   <Provider store={store}>

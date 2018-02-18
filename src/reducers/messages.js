@@ -1,11 +1,16 @@
 const INITIAL_STATE = {
-  x: '1'
+  messagesList: []
 };
 
 export default function notesReducer(state = INITIAL_STATE, action){
   switch(action.type){
-    case 'ADD_USER':
-      return state;
+    case 'ADD_MESSAGE':
+    case 'MESSAGE_RECEIVED':
+      return {...state, messagesList: state.messagesList.concat({
+        message: action.payload.message,
+        author: action.payload.author,
+        id: action.payload.id
+      })};
     default:
       return state;
   }

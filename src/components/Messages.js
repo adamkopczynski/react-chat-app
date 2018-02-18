@@ -1,11 +1,33 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Message from './Message'
+import { connect } from 'react-redux'
 
-export default class MessagesList extends React.Component{
-  render(){
+const mapStateToProps = state => ({
+  messages: state.messages.messagesList
+})
+
+const MessagesList = ({messages}) => {
     return(
       <div className="messages">
-        messages
+        {messages.map(msg =>
+          <Message
+            key = {msg.id}
+            message = {msg.message}
+            author = {msg.author}
+          />)}
       </div>
-    );
-  }
+    )
 }
+
+MessagesList.propTypes = {
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      message: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired
+    }).isRequired
+  ).isRequired
+}
+
+export default connect(mapStateToProps, {})(MessagesList)
