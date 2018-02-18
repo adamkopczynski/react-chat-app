@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 100vw;
+  height: 100vh;
+}
+.messages-container{
+  border-left: 1px solid #989595;
+}
+.new-message{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 57px;
+  border-top: 1px solid #989595;
+}
