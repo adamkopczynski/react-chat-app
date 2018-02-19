@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 
 const Message = ({message, author}) => {
   return(
-    <p>
-      <i>{author}</i>: {message}
-    </p>
+    <div className='message'>
+      <p>
+        <i>{author}</i>: {message}
+      </p>
+    </div>
   )
 }
 

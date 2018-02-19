@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import User from './User'
+
 const mapStateToProps = state => ({
   users: state.users.usersList
 })
@@ -10,9 +12,9 @@ const Sidebar = ({users}) => {
     return(
       <aside className="sidebar">
         <ul>
-          {users ? users.map(user =>
-              <li key={user.id}> {user.name} </li>
-          ) : 'Empty room'}
+          {users.map(user =>
+              <User key={user.id} name={user.name} />
+          )}
         </ul>
       </aside>
     )

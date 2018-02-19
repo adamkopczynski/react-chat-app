@@ -9,7 +9,9 @@ export default function notesReducer(state = INITIAL_STATE, action){
       return {...state, usersList: state.usersList.concat({
         name: action.payload.name,
         id: action.payload.id
-      })};
+      })}
+    case 'USERS_LIST':
+      return {...state, usersList: action.payload.users}
     default:
       return state;
   }
