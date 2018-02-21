@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Message from './Message'
+import MyMessage from './MyMessage'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
@@ -11,11 +12,18 @@ const MessagesList = ({messages}) => {
     return(
       <div className="messages">
         {messages.map(msg =>
+          msg.author === 'Me'?
+          <MyMessage
+            key = {msg.id}
+            message = {msg.message}
+            author = {msg.author}
+          /> :
           <Message
             key = {msg.id}
             message = {msg.message}
             author = {msg.author}
-          />)}
+          />
+        )}
       </div>
     )
 }
