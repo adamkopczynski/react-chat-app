@@ -35,3 +35,10 @@ export const usersList = users => ({
     users
   }
 })
+
+export const changeUsername = name => ({
+  type: types.CHANGE_USERNAME,
+  payload:{
+    name
+  }
+})

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/styles.css';
 
 import NewMessage from './components/NewMessage';
 import Messages from './components/Messages';
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Sidebar />
+          <Sidebar />
         <main className="messages-container">
             <Messages />
             <NewMessage />
