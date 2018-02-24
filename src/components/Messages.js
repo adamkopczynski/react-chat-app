@@ -8,24 +8,30 @@ const mapStateToProps = state => ({
   messages: state.messages.messagesList
 })
 
-const MessagesList = ({messages}) => {
-    return(
-      <div className="messages">
-        {messages.map(msg =>
-          msg.author === 'Me'?
-          <MyMessage
-            key = {msg.id}
-            message = {msg.message}
-            author = {msg.author}
-          /> :
-          <Message
-            key = {msg.id}
-            message = {msg.message}
-            author = {msg.author}
-          />
-        )}
-      </div>
-    )
+class MessagesList extends React.Component{
+    componentWillReceiveProps(){
+      let msg = document.querySelector('.messages')
+      msg.scrollTop = msg.scrollHeight
+    }
+    render(){
+      return(
+        <div className="messages">
+          {this.props.messages.map(msg =>
+            msg.author === 'Me'?
+            <MyMessage
+              key = {msg.id}
+              message = {msg.message}
+              author = {msg.author}
+            /> :
+            <Message
+              key = {msg.id}
+              message = {msg.message}
+              author = {msg.author}
+            />
+          )}
+        </div>
+      )
+    }
 }
 
 MessagesList.propTypes = {
