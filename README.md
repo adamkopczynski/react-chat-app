@@ -12,3 +12,7 @@ This project is based on FreeCodeCamp example.
     npm install
     npm start
   ```
+  
+## Screenshot
+
+  ![App screen](src/images/screen.png)
