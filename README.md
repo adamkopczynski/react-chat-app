@@ -1,6 +1,6 @@
 This project is based on FreeCodeCamp example.
 
-## Using
+## Installation
 
   You can try it on your own.
 
@@ -10,6 +10,7 @@ This project is based on FreeCodeCamp example.
     cd react-chat-app
 
     npm install
+    
     npm start
   ```
   
