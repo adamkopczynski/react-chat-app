@@ -15,6 +15,7 @@ const NewMessage = (props) => {
       <section className="new-message">
         <input
           type='text'
+          placeholder='New message...'
           onKeyPress = {
             (e) => {
               if(e.key === 'Enter'){
