@@ -11,11 +11,14 @@ This project is based on FreeCodeCamp example.
 
     npm install
     
-    node server.js
-    
     npm start
   ```
-  
+  Start node server:
+  ```shell
+     cd server
+     
+     node app.js
+  ```
 ## Screenshot
 
   ![App screen](src/images/screen.png)
