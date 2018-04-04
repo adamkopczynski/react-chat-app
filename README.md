@@ -11,6 +11,8 @@ This project is based on FreeCodeCamp example.
 
     npm install
     
+    node server.js
+    
     npm start
   ```
   
